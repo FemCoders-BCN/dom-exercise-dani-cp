@@ -1,7 +1,3 @@
-const redColor = document.querySelector(".red");
-const grayColor = document.getElementsByClassName("gray")[0];
-const blackColor = document.querySelector(".black");
-
 const changeToRed = function() {
     document.getElementsByTagName("h3")[0].style.backgroundColor = "red";
     document.getElementById("button").style.backgroundColor = "red";
