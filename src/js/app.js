@@ -2,24 +2,36 @@ const redColor = document.querySelector(".red");
 const grayColor = document.getElementsByClassName("gray")[0];
 const blackColor = document.querySelector(".black");
 
-const itemTag = document.getElementsByTagName("h3")[0];
-const cartButton = document.getElementById("button");
-const imgCard = document.querySelector(".product-image");
+const changeToRed = function() {
+    document.getElementsByTagName("h3")[0].style.backgroundColor = "red";
+    document.getElementById("button").style.backgroundColor = "red";
+    document.querySelector(".product-image").style.backgroundImage = 'url("../../public/img/redcar.jpg")';
+}
 
-redColor.addEventListener("click", ()=>{
-    itemTag.style.backgroundColor = "red";
-    cartButton.style.backgroundColor = "red";
-    imgCard.style.backgroundImage = 'url("../../public/img/redcar.jpg")';
-});
+const changeToGray = function() {
+    document.getElementsByTagName("h3")[0].style.backgroundColor = "gray";
+    document.getElementById("button").style.backgroundColor = "gray";
+    document.querySelector(".product-image").style.backgroundImage = 'url("../../public/img/graycar.jpg")';
+}
 
-grayColor.addEventListener("click", ()=>{
-    itemTag.style.backgroundColor = "gray";
-    cartButton.style.backgroundColor = "gray";
-    imgCard.style.backgroundImage = 'url("../../public/img/graycar.jpg")';
-});
+const changeToBlack = function(){
+    document.getElementsByTagName("h3")[0].style.backgroundColor = "black";
+    document.getElementById("button").style.backgroundColor = "black";
+    document.querySelector(".product-image").style.backgroundImage = 'url("../../public/img/blackcar.jpg")';
+}
 
-blackColor.addEventListener("click", ()=>{
-    itemTag.style.backgroundColor = "black";
-    cartButton.style.backgroundColor = "black";
-    imgCard.style.backgroundImage = 'url("../../public/img/blackcar.jpg")';
-});
+window.onload = function(){
+    document.querySelector(".red").addEventListener("click", ()=>{
+        changeToRed();
+    });
+
+    document.getElementsByClassName("gray")[0].addEventListener("click", ()=>{
+        changeToGray();
+    });
+
+    document.querySelector(".black").addEventListener("click", ()=>{
+        changeToBlack();
+    });
+}
+
+export{changeToRed, changeToGray, changeToBlack};
