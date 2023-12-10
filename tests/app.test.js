@@ -41,10 +41,21 @@ describe('APP',()=>{
         expect(script).not.toBeNull();
       });
 
+      it("should change the color of the elements to red", async () => {
+        buttonMock.style.backgroundColor = "rgb(0, 0, 0)";
+        imgMock.style.backgroundImage = 'url("../../public/img/graycar.jpg")';
+        tagMock.style.backgroundColor = "rgb(0, 0, 0)";
+
+        changeToRed();
+        expect(buttonMock.style.backgroundColor).toBe("red");
+        expect(imgMock.style.backgroundImage).toBe("url(../../public/img/redcar.jpg)");
+        expect(tagMock.style.backgroundColor).toBe("red");
+      });
+
       it("should change the color of the elements to gray", async () => {
-        buttonMock.style.backgroundColor = "rgb(255, 0, 0)";
+        buttonMock.style.backgroundColor = "rgb(0, 0, 0)";
         imgMock.style.backgroundImage = 'url("../../public/img/redcar.jpg")';
-        tagMock.style.backgroundColor = "rgb(255, 0, 0)";
+        tagMock.style.backgroundColor = "rgb(0, 0, 0)";
 
         changeToGray();
         expect(buttonMock.style.backgroundColor).toBe("gray");
@@ -52,6 +63,15 @@ describe('APP',()=>{
         expect(tagMock.style.backgroundColor).toBe("gray");
       });
 
+      it("should change the color of the elements to black", async () => {
+        buttonMock.style.backgroundColor = "rgb(0, 0, 0)";
+        imgMock.style.backgroundImage = 'url("../../public/img/redcar.jpg")';
+        tagMock.style.backgroundColor = "rgb(0, 0, 0)";
 
+        changeToBlack();
+        expect(buttonMock.style.backgroundColor).toBe("black");
+        expect(imgMock.style.backgroundImage).toBe("url(../../public/img/blackcar.jpg)");
+        expect(tagMock.style.backgroundColor).toBe("black");
+      });
 });
 
